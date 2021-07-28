@@ -108,8 +108,8 @@ console.log(sum(1, 2, 3, 4))
 
 function userIdGenerator() {
     let idStr = ""
-    for(let i = 0; i < 7; i++){
-        idStr += S[Math.floor(Math.random()*"H0zyabCcd5f4hI6eGws7g8DJ9rKEAuqNMLiB1Y2PSOpXFt3QmnxZWvljoRkTVU".length)]
+    for(let i = 0; i < 7; i++){ 
+        idStr += "H0zyabCcd5f4hI6eGws7g8DJ9rKEAuqNMLiB1Y2PSOpXFt3QmnxZWvljoRkTVU"[Math.floor(Math.random()*62)]
     }
     return idStr
 }

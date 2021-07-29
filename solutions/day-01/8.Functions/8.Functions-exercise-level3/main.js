@@ -67,8 +67,21 @@ const generateColors = (colorCodeType, numOfColor) => {
         console.log(`error ${colorCodeType} is not valid`)
     }
 }
-
 console.log(generateColors('hexa', 3))
 console.log(generateColors('hexa', 1))
 console.log(generateColors('rgb', 3))
 console.log(generateColors('rgb', 1))
+
+
+function shuffleArray(arr) {
+    let shuffledArr = []
+    let tempArr = []
+    tempArr = tempArr.concat(arr)
+
+    for(let i = 0; 0 < tempArr.length; i++){
+        let randomElement = tempArr.splice(tempArr.length * Math.random(),1)
+        shuffledArr[i] = randomElement.pop()
+    }
+    return shuffledArr
+}
+console.log(shuffleArray([1,2,3,4,5,6,7,8,9]))

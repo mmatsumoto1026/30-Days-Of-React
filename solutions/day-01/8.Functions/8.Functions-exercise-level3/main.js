@@ -85,3 +85,39 @@ function shuffleArray(arr) {
     return shuffledArr
 }
 console.log(shuffleArray([1,2,3,4,5,6,7,8,9]))
+
+
+const factorial = (num) => {
+    let factorialNum = 1
+    for(let i = num; 0 < i; i--) {
+        factorialNum *= i
+    }
+    return factorialNum
+}
+console.log(factorial(4))
+
+
+function isEmpty(param) {
+    if(Array.isArray(param) || typeof param === "string") {
+        return param.length === 0
+    } else if (typeof param === "object") {
+        return !Object.keys(param).length
+    }
+}
+console.log(isEmpty(""))
+console.log(isEmpty([]))
+console.log(isEmpty({}))
+
+
+function average(arr) {
+    let arrAverage = 0
+    for(let eachNumber of arr) {
+        if(!(typeof eachNumber === "number")) {
+          let message = `${eachNumber} is not a number.`
+            return message
+        }
+        arrAverage += eachNumber
+    }
+    return arrAverage / arr.length
+}
+console.log(average([1,"a",3,4,5,6,7,8,9,10]))

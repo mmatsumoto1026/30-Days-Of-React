@@ -28,41 +28,62 @@
             position: relative;
         }
 
-        .header-Wrapper,
+        .header-wrapper,
         .main-wrapper,
         .footer-wrapper {
             width: 85%;
             margin: auto;
         }
 
-        .header-Wrapper,
+        .header-wrapper,
         .main-wrapper {
             padding: 10px;
-            margin: 2px auto;
+            margin: 0 auto;
+        }
+        .header-wrapper {
+            min-height: 250px;
+        }
+        .header-wrapper .message {
+            font-size: 35px;
+            margin-top: 15px;
+        }
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 370px;
         }
 
         h1 {
             font-size: 70px;
             font-weight: 300;
+            margin-bottom: 20px;
         }
 
         h2,
-        h3 {
-            font-weight: 300;
+        h3,
+        p,
+        small {
+            font-weight: bold;
         }
 
         header {
             background-color: #61dbfb;
-            padding: 10px;
+            padding: 10px 10px 30px;
         }
 
         main {
             padding: 10px;
-            padding-bottom: 60px;
+        }
+
+        main p {
+            line-height: 50px;
         }
 
         ul {
             margin-left: 15px;
+            margin-bottom: 30px;
         }
 
         ul li {
@@ -70,8 +91,6 @@
         }
 
         footer {
-            position: absolute;
-            bottom: 0;
             width: 100%;
             height: 60px;
             background: #6cf;
@@ -81,6 +100,12 @@
             font-weight: 400;
             text-align: center;
             line-height: 60px;
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+            font-size: 50px;
+            }
         }
     </style>
 </head>
@@ -94,46 +119,190 @@
     <script type="text/babel">
         const rootElement = document.querySelector('.root')
 
+        const headerStyle = { textAlign: 'center', color: '#515151' }
+
+        const welcome = 'Welcome to 30 Days Of React';
+        const title = 'Getting Started React';
+        const subtitle = 'JavaScript Library';
+        const author = {
+            firstName: 'Asabeneh',
+            lastName: 'Yetayeh'
+        }
+        const date = 'Oct 1, 2020'
+        const message = 'Enjoy Your Coding!'
+
         const header = (
-            <header>
+            <header style={headerStyle}>
                 <div className="header-wrapper">
-                    <h1>Welcome to 30 Days of React</h1>
-                    <h2>Getting started React</h2>
-                    <h3>JavaScript Library</h3>
-                    <p>Manabu Matsumoto</p>
-                    <small >August 2, 2021</small>
+                    <h1>{welcome}</h1>
+                    <h2>{title}</h2>
+                    <h3>{subtitle}</h3>
+                    <p>Instructor: {author.firstName}  {author.lastName}</p>
+                    <small >Date: {date}</small>
+                    <p className='message'>{message}</p>
                 </div>
             </header>
         )
 
+        const numOne = 3
+        const numTwo = 2
+
+        const result = (
+            <p>{numOne} + {numTwo} = {numOne + numTwo}</p>
+        )
+
+        const yearBorn = 1820
+        const currenYear = new Date().getFullYear()
+        const age = currenYear - yearBorn
+        const pesonAge = (
+            <p>{' '}
+                {author.firstName} {author.lastName} is {age} years old</p>
+        )
+
+        const mainStyle = { textAlign: 'center', fontWeight: 'bold' }
+
+        const techs = ['HTML', 'CSS', 'JavaScript']
+        const techsFormatted = techs.map((tech,index) => <li key={tech}>{index + 1}. {tech}</li>)
+
+        const one = 1
+        const two = 2
+        const three = 3
+        const four = 4
+        const five = 5 
+        const six = 6
+        const seven = 7
+        const eight = 8
+        const nine = 9
+        const ten = 10
+        const numArr= [one, two, three, four, five, six, seven, eight, nine, ten]
+        const evenNumsFormatted = numArr.filter((num) => num % 2 === 0)
+        const loveCoding = true
         const main = (
-            <main>
+            <main style={mainStyle}>
                 <div className="main-wrapper">
-                    <p>Prerequisite to get started react.js:</p>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                    </ul>
+                    <p>Prerequisite to get started {' '}
+                        <strong><em>react.js</em></strong>
+                        {' '}:
+                    </p>
+                    <ul>{techsFormatted}</ul>
+                    {result}
+                    <p>
+                        {'Even numbers less than ten are: '}{evenNumsFormatted + ''}
+                    </p>
+                    {loveCoding ? 'I Love Coding!' : 'I do not Like Coding'}
+                    {pesonAge}
                 </div>
             </main>
         )
 
+        const footerStyle = { color: '#515151' }
+
+        const copyRight = 'Copyright 2020'
         const footer = (
-            <footer>
+            <footer style={footerStyle}>
                 <div className="footer-wrapper">
-                    <p>Copyright 2020</p>
+                    <p>{copyRight}</p>
                 </div>
             </footer>
         )
+        
+        const appStyle = { backgroundColor: '#f8f8f8' }
         const app = (
-            <div>
+            <div style={appStyle}>
                 {header}
                 {main}
                 {footer}
             </div>
         )
         ReactDOM.render(app, rootElement)
+    /*
+    
+    What is React?
+        - React is a Javascript library for building areusable user interface(UI)
+    What is a library?
+        - A group of functional modules that are often used in programs. Those are cut out and summarized in a form that is easy to reuse.
+    What is a single page application?
+        - A single-page application (SPA) is a web application or website that interacts with the user by dynamically rewriting the current web page with new data from the web server, instead of the default method of a web browser loading entire new pages. The goal is faster transitions that make the website feel more like a native app. 
+    What is a component ?
+        - A component is a cutout of a View that is part of the UI.
+        However, you can not only cut out the UI, but also include the code, which can be reused as a program.
+    What is the latest version of React?
+        - React latest release is 17.0.2
+    What is DOM?
+        - The Document Object Model (DOM) is a cross-platform and language-independent interface that treats an XML or HTML document as a tree structure wherein each node is an object representing a part of the document.
+    What is React Virtual DOM?
+        - React uses its virtual DOM to make new changes and it updates only the element, that needs changing. Do not directly interact with DOM when you build a React Application and leave the DOM manipulation job for the React virtual DOM
+    What does a web application or a website(composed of) have?
+        - A web application, or a website, is made of buttons, links, forms with different input fields, header, footer, sections, articles, texts, images, audios, videos and boxes with different shapes.
+
+    
+    Why did you chose to use react?
+        - fast
+        - modular
+        - scalable
+        - flexible
+        - big community and popular
+        - open source
+        - High job opportunity
+    What measures do you use to know popularity ?
+        - One measure of popularity could be GitHub repository stars, watchers and forks. See Github repository -> https://github.com/facebook/react
+    What is more popular, React or Vue ?
+        - Now let's look at the number of watchers, stars and forks for both React and Vue -> https://github.com/vuejs/vue  @2021.08.03
+        - Watch -> 6.7k(React) vs 6.3k(vue)
+        - star -> 172k(React) vs 186k(vue)
+        - Fork -> 34.6k(React) vs 29.8k(vue)
+
+  
+    What is an HTML element?
+        - An HTML element has an opening and closing tags, content, and attribute in the opening tag.
+    How to write a self closing HTML element?
+        - Self closing HTML elements are like <img />, <input />, <link />, <meta />, and so on.
+    What is an HTML attribute? Write some of them
+        - HTML attributes are href, src, style, id, class, onClick, onChange and so on.
+    What is JSX?
+        - JSX stands for JavaScript XML. JSX allows us to write HTML elements with JavaScript code. 
+    What is babel?
+        - Babel is a library which transpiles JSX to pure JavaScript and latest JavaScript to older version.
+    What is a transpiler?
+        - transpiler is a type of translator that takes the source code of a program written in a programming language as its input and produces an equivalent source code in the same or a different programming language. 
+
+
+    What is a JSX element?
+        - JSX element could be a single HTML element or many HTML elements wrapped in a parent HTML element.
+    Write your name in a JSX element and store it in a name variable
+        - const name = <h3>Manabu Matsumoto</h3>
+    Write a JSX element which displays your full name, country, title, gender, email, phone number. Use h1 for the name and p for the rest of the information and store it in a user variable
+        - const user = (
+            <div id="myPersonality">
+                <h1>Manabu Matsumoto</h1>
+                <p>Japan</p>
+                <p>I have no title</p>
+                <p>male</p>
+                <p>thisismyemailaddress@thanks.com</p>
+                <p>987-6543-210</p>
+            </div>
+        )
+    Write a footer JSX element
+        - <footer>
+            Copyright 2020
+          </footer>
+
+          
+    Create a style object for the main JSX
+        - Please see above code.
+    Create a style object for the footer and app JSX
+        - Please see above code.
+    Add more styles to the JSX elements
+        - Please see above code.
+
+    
+    Apply different styles to your JSX elements
+        - Please see above code
+
+
+    Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
+        - Please see above code
+    */
     </script>
 </body>
 

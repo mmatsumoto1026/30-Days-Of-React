@@ -1,0 +1,104 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
+      rel="stylesheet" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+<title>30 Days Of React App</title>
+<style>
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+    line-height: 1.5;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    color: black;
+  }
+
+  .root {
+    min-height: 100%;
+    position: relative;
+  }
+
+  .userCardContainer{
+    position: relative;
+    width: 100%;
+    text-align: left;
+    padding: 15px
+  }
+
+  .userCardContainer .AsabenehImage {
+    width: 145px;
+    border-radius: 50%;
+  }
+
+  .userCardContainer .userName {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  .userCardContainer .roundCheckMark {
+    position: absolute;
+    width: 18px;
+    top: 175px;
+    left: 185px;
+  }
+
+  .userCardContainer .title {
+    font-size: 12px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .userCardContainer .skills {
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .userCardContainer ul {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .userCardContainer ul li {
+    float: left;
+    min-width: 60px;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+    background-color: #2ACFCF;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .clockIcon {
+    width: 15px;
+    margin-right: 3px;
+  }
+
+  .clearfix::after {
+   content: "";
+   display: block;
+   clear: both;
+  }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

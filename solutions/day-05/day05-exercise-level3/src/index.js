@@ -32,7 +32,7 @@ const HexaColorboxes = ({str, colorBoxStyle}) => {
       style={{...colorBoxStyle, backgroundColor: color}} 
       key={i}
     >
-          {color}
+      {color}
     </div>
   );
 
@@ -93,10 +93,11 @@ const App = () => {
     <HexaColorboxes 
       str = {str}
       colorBoxStyle = {colorBoxStyle}
-      />
+    />
     <UserCard 
       skills = {skills}
-      elementsInnerText = {elementsInnerText}/>
+      elementsInnerText = {elementsInnerText}
+    />
   </div>
   );
 };

@@ -1,0 +1,10 @@
+small {
+    visibility: hidden;
+    margin-left: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+.form-group.error small {
+    visibility: visible;
+}
